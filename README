@@ -1,0 +1,16 @@
+Запуск базового кода:
+CTRL + ALT + N
+
+
+Создание динамиской библиотеки:
+1) Создать 2 файла с расширениями .с и .h в папке library(library\tree.c и library\tree.h)
+2) Скомпилировать все файлы .c: gcc -c -FPIC library\tree.c -o .\library\tree.o
+3) Создать динам библ: gcc -shared -o libtree.so .\library\tree.o (lib_.so - обязательно)
+4) gcc test_tree.c -o tree -I. -L. -l:libtree.so
+5) Запуск: ./tree
+
+
+2) Скомпилировать все файлы .c: gcc -c -FPIC library\double_list.c -o .\library\double_list.o
+3) Создать динам библ: gcc -shared -o libdouble_list.so .\library\double_list.o (lib_.so - обязательно)
+4) gcc test_list.c -o double_list -I. -L. -l:libdouble_list.so
+5) Запуск: ./double_list
